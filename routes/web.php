@@ -3,9 +3,11 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\PostController;
  
 // Route::view('/', 'home')->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
+route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::view('article', 'article')->name('article');
 Route::view('contact', 'contact')->name('contact');
